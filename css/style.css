@@ -247,6 +247,23 @@ body.en .lang-ar { display: none; }
 }
 .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--accent); }
 .form-note { font-size: .78rem; color: var(--text-mut); text-align: center; }
+.btn-wa {
+  background: #25d366; color: var(--white);
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  box-shadow: 0 10px 28px rgba(37,211,102,.35);
+}
+.btn-wa:hover { background: #1fb857; transform: translateY(-3px); }
+
+/* ---- floating WhatsApp ---- */
+.wa-float {
+  position: fixed; bottom: 22px; inset-inline-start: 22px; z-index: 90;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: #25d366; color: var(--white);
+  display: grid; place-items: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  transition: transform .25s, box-shadow .25s;
+}
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 12px 32px rgba(37,211,102,.5); }
 
 /* ---- footer ---- */
 .footer { background: var(--navy-900); color: var(--ice-100); padding: 34px 0; border-top: 1px solid rgba(126,168,207,.15); }
@@ -268,14 +285,42 @@ body.en .lang-ar { display: none; }
 @media (max-width: 820px) {
   .nav-links {
     position: fixed; top: 0; inset-inline-end: -100%;
-    height: 100vh; width: min(320px, 80vw);
+    height: 100vh; height: 100dvh; width: min(320px, 80vw);
     background: var(--navy-900); flex-direction: column; justify-content: center;
     gap: 34px; transition: inset-inline-end .4s ease; box-shadow: -10px 0 40px rgba(0,0,0,.4);
+    z-index: 99;
   }
   .nav-links.open { inset-inline-end: 0; }
-  .burger { display: flex; }
+  .nav-links a { font-size: 1.15rem; padding: 6px 0; }
+  .burger { display: flex; padding: 10px; }
   .brand-text strong { font-size: .9rem; }
+  .brand-text small { display: none; }
+  .brand-logo { width: 40px; height: 40px; }
   .g-item.wide { grid-column: span 1; aspect-ratio: 1; }
   .contact-cards { grid-template-columns: 1fr; }
-  .hero-inner { padding-top: 120px; }
+  .hero-inner { padding-top: 110px; padding-bottom: 70px; }
+  .hero { min-height: 100dvh; }
+  .hero-cta { margin-bottom: 40px; }
+  .hero-cta .btn { flex: 1 1 100%; text-align: center; }
+  .hero-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat { padding: 12px 14px; }
+  .stat strong { font-size: 1.35rem; }
+  .hero-scroll { display: none; }
+  .section { padding: 64px 0; }
+  .section-title { margin-bottom: 30px; }
+  .services-grid { grid-template-columns: 1fr; gap: 14px; }
+  .service-card { padding: 22px 20px; }
+  .sicor-card { padding: 24px 20px; }
+  .sicor-logo { max-width: 260px; }
+  .sicor-products { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .contact-form { padding: 24px 18px; }
+  /* 16px inputs prevent iOS auto-zoom on focus */
+  .contact-form input, .contact-form select, .contact-form textarea { font-size: 16px; }
+  .wa-float { width: 52px; height: 52px; bottom: 16px; inset-inline-start: 16px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 400px) {
+  .gallery-grid, .sicor-products { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 1.9rem; }
 }

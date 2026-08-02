@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mussab-personal-org.github.io/alahjar-lifts/sitemap.xml

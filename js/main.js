@@ -48,6 +48,19 @@ const io = new IntersectionObserver(
 );
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+// Contact form → WhatsApp
+const WA_NUMBER = '218914500013';
+document.getElementById('waForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target;
+  const en = document.body.classList.contains('en');
+  const subject = f.subject.options[f.subject.selectedIndex].textContent;
+  const msg = en
+    ? `Hello Alahjar Lifts,\nName: ${f.name.value}\nPhone: ${f.phone.value}\nSubject: ${subject}\n\n${f.body.value}`
+    : `مرحباً شركة الأحجار للمصاعد،\nالاسم: ${f.name.value}\nالهاتف: ${f.phone.value}\nالموضوع: ${subject}\n\n${f.body.value}`;
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+});
+
 // Footer year
 const y = String(new Date().getFullYear());
 document.getElementById('year').textContent = y;

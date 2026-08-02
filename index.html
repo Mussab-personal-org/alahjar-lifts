@@ -2,10 +2,25 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>شركة الأحجار اللامعة للمصاعد | Alahjar Lifts — Tripoli, Libya</title>
-<meta name="description" content="شركة الأحجار اللامعة للمصاعد الكهربائية — توريد وتركيب وصيانة المصاعد والسلالم الكهربائية في ليبيا. شريك معتمد لشركة SICOR الإيطالية.">
-<link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+<meta name="description" content="شركة الأحجار اللامعة للمصاعد الكهربائية — توريد وتركيب وصيانة المصاعد والسلالم الكهربائية في ليبيا. شريك معتمد لشركة SICOR الإيطالية. Elevator supply, installation & maintenance in Tripoli, Libya.">
+<meta name="theme-color" content="#081a2e">
+<link rel="canonical" href="https://mussab-personal-org.github.io/alahjar-lifts/">
+<!-- Open Graph (Facebook / WhatsApp preview) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alahjar Lifts — شركة الأحجار اللامعة للمصاعد">
+<meta property="og:title" content="شركة الأحجار اللامعة للمصاعد | Alahjar Lifts">
+<meta property="og:description" content="توريد وتركيب وصيانة المصاعد والسلالم الكهربائية في ليبيا — بمحركات SICOR الإيطالية الأصلية. طرابلس، السراج.">
+<meta property="og:url" content="https://mussab-personal-org.github.io/alahjar-lifts/">
+<meta property="og:image" content="https://mussab-personal-org.github.io/alahjar-lifts/assets/cover.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1067">
+<meta property="og:locale" content="ar_LY">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -246,7 +261,7 @@
           <span><span class="lang-ar">شركة الاحجار للمصاعد - Alahjar Lifts</span><span class="lang-en">Alahjar Lifts</span></span>
         </a>
       </div>
-      <form class="contact-form reveal" action="mailto:alahjarlift@gmail.com" method="get" enctype="text/plain">
+      <form class="contact-form reveal" id="waForm">
         <h3><span class="lang-ar">أرسل لنا رسالة</span><span class="lang-en">Send us a message</span></h3>
         <input type="text" name="name" required placeholder="الاسم الكامل" data-ph-ar="الاسم الكامل" data-ph-en="Full name">
         <input type="tel" name="phone" required placeholder="رقم الهاتف" data-ph-ar="رقم الهاتف" data-ph-en="Phone number">
@@ -257,8 +272,11 @@
           <option value="other">استفسار آخر</option>
         </select>
         <textarea name="body" rows="4" required placeholder="تفاصيل المشروع…" data-ph-ar="تفاصيل المشروع…" data-ph-en="Project details…"></textarea>
-        <button type="submit" class="btn btn-primary full"><span class="lang-ar">إرسال</span><span class="lang-en">Send</span></button>
-        <p class="form-note"><span class="lang-ar">سيتم فتح تطبيق البريد لديك لإرسال الرسالة.</span><span class="lang-en">Your mail app will open to send the message.</span></p>
+        <button type="submit" class="btn btn-wa full">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.2-.3.3-.5v-.5c0-.1-.5-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.2Z"/></svg>
+          <span class="lang-ar">إرسال عبر واتساب</span><span class="lang-en">Send via WhatsApp</span>
+        </button>
+        <p class="form-note"><span class="lang-ar">سيتم فتح واتساب وبها رسالتك جاهزة للإرسال.</span><span class="lang-en">WhatsApp will open with your message ready to send.</span></p>
       </form>
     </div>
   </div>
@@ -280,6 +298,11 @@
     </p>
   </div>
 </footer>
+
+<!-- Floating WhatsApp button -->
+<a class="wa-float" href="https://wa.me/218914500013" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.2-.3.3-.5v-.5c0-.1-.5-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.2Z"/></svg>
+</a>
 
 <script src="js/main.js"></script>
 </body>
