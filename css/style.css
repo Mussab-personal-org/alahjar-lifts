@@ -19,12 +19,17 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+/* overflow-x: clip (not hidden) — hidden turns <body> into the scroll
+   container on iOS Safari, which breaks position:fixed children */
+html, body { overflow-x: clip; }
+@supports not (overflow-x: clip) {
+  html, body { overflow-x: hidden; }
+}
 body {
   font-family: var(--font-ar);
   color: var(--text-dark);
   background: var(--white);
   line-height: 1.7;
-  overflow-x: hidden;
 }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
@@ -317,7 +322,7 @@ body.en .lang-ar { display: none; }
   .contact-form { padding: 24px 18px; }
   /* 16px inputs prevent iOS auto-zoom on focus */
   .contact-form input, .contact-form select, .contact-form textarea { font-size: 16px; }
-  .wa-float { width: 52px; height: 52px; bottom: 16px; inset-inline-start: 16px; }
+  .wa-float { width: 52px; height: 52px; bottom: calc(16px + env(safe-area-inset-bottom)); inset-inline-start: 16px; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 400px) {
