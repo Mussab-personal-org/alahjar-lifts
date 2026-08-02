@@ -239,6 +239,8 @@ body.en .lang-ar { display: none; }
 .contact-card:hover { transform: translateY(-5px); border-color: var(--accent-hot); background: rgba(22,67,110,.7); }
 .cc-icon { font-size: 1.6rem; margin-bottom: 6px; }
 .contact-card strong { color: var(--accent-hot); font-weight: 800; }
+.contact-card .tel { padding: 2px 0; transition: color .2s; }
+.contact-card .tel:hover { color: var(--accent-hot); text-decoration: underline; }
 .contact-form {
   background: var(--white); color: var(--text-dark);
   border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow);
